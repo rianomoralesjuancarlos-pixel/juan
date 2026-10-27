@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor 
 @NoArgsConstructor 
 @Builder 
-public class ClienteDto {
+public class ClienteDto extends UsuarioDto{
     
     private String tipCli;
     private String ptos;
