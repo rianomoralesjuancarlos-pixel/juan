@@ -4,15 +4,15 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Getter @Setter 
 @NoArgsConstructor 
 @AllArgsConstructor 
-@Builder 
+@SuperBuilder 
 public class UsuarioDto {
 
     
@@ -35,8 +35,8 @@ public class UsuarioDto {
 
     private String direc;
 
-    @Pattern (regexp = "^{0.9}+$", message = "el campo debe de tener un solo numero")
-    private long tele;
+    @Pattern (regexp = "^[0-9]+$", message = "el campo debe de tener un solo numero")
+    private String tele;
 
 
 

@@ -9,8 +9,10 @@ public interface ClienteMapper {
     ClienteDto toDto (Cliente cliente);
 
     //De CLienteDto a Cliente
-    Cliente toEntity (ClienteDto clienteDto);
+    Cliente toCliente (ClienteDto clienteDto);
 
-    
+    //Cliente toEntidad(ClienteDto clienteDto);
+
+
 
 }

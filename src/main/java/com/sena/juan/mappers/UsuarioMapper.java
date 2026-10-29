@@ -6,7 +6,7 @@ import org.mapstruct.Mapping;
 import com.sena.juan.dtos.UsuarioDto;
 import com.sena.juan.models.usuarios.Usuario;
 
-@Mapper (componentModel = "string")
+@Mapper (componentModel = "spring")
 public interface UsuarioMapper {
 
     //convertir Entidad a Dto
@@ -21,5 +21,5 @@ public interface UsuarioMapper {
     @Mapping (source = "apell" , target = "ape")
     @Mapping (source = "direc" , target = "dir")
     @Mapping (source = "tele" , target = "tel")
-    Usuario convierteaEntidad(UsuarioDto usuario);
+    Usuario convierteaEntidad(UsuarioDto usuarioDto);
 }

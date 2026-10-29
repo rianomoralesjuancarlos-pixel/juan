@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @Entity 
 @Table (name = "clientes")
@@ -15,9 +16,10 @@ import lombok.Setter;
 @Getter @Setter 
 @AllArgsConstructor 
 @NoArgsConstructor 
+@SuperBuilder 
 public class Cliente extends Usuario {
     @Column (name="tipo_cliente")
-    private long tipoCliente;
+    private String tipoCliente;
 
     @Column (name="puntos")
     private Integer puntos;

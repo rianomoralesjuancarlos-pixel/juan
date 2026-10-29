@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sena</groupId>
-	<artifactId>luis</artifactId>
+	<artifactId>juan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>luis</name>
+	<name>juan</name>
 	<description/>
 	<url/>
 	<licenses>

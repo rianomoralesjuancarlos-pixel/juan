@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.SuperBuilder;
+import lombok.experimental.SuperBuilder;
 
 @Entity 
 @Table (name = "usuarios")
@@ -36,7 +36,7 @@ public class Usuario {
     @Column (name = "direccion", length = 120)
     private String dir;
 
-    @Column (name = "telefono")
-    private long tel;
+    @Column (name = "telefono", length = 20)
+    private String tel;
 
 }
