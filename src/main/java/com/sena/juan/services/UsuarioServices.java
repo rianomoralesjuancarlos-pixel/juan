@@ -15,6 +15,12 @@ public interface UsuarioServices {
     //Consultar usuario por id
     UsuarioDto buscarPorId(Long id);
 
+    //Actualizar usuario
+    UsuarioDto actualizar(Long id, UsuarioDto usuarioDto);
+    //Eliminar usuario
+    UsuarioDto eliminar(Long id);
+
+
 
 
 }

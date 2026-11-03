@@ -33,6 +33,8 @@ public class UsuarioServicesImplement implements UsuarioServices {
 
     }
 
+    //listar todos los usuarios
+
     @Override 
     public List<UsuarioDto>ListarTodos(){
         return usuarioRepository.findAll()
@@ -40,6 +42,7 @@ public class UsuarioServicesImplement implements UsuarioServices {
         .map(usuarioMapper::ConvierteaDto)
         .toList();
     }
+    //consultar usuario por id
 
     @Override 
     public UsuarioDto buscarPorId (Long id){
@@ -51,9 +54,34 @@ public class UsuarioServicesImplement implements UsuarioServices {
 
     } 
 
+    //actualizar usuario
+    @Override
+    public UsuarioDto actualizar(Long id, UsuarioDto usuarioDto) {
+        Usuario usuarioEncontrado = usuarioRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Usuario no encontrado con id: " + id));
+
+                //Actualizar datos
+                usuarioEncontrado.setNom(usuarioDto.getNomb());
+                usuarioEncontrado.setApe(usuarioDto.getApell());
+                usuarioEncontrado.setDir(usuarioDto.getDirec());
+                usuarioEncontrado.setTel(usuarioDto.getTele());
 
 
-
+                Usuario usuarioActualizado = usuarioRepository.save(usuarioEncontrado);
+                return usuarioMapper.ConvierteaDto(usuarioActualizado);
+        
     
+    }
+
+    @Override
+    public UsuarioDto eliminar(Long id) {
+        Usuario usuarioEncontrado = usuarioRepository.findById(id)
+        .orElseThrow(() -> new EntityNotFoundException("Usuario no encontrado con id: " + id));
+
+        usuarioRepository.delete(usuarioEncontrado);
+        return usuarioMapper.ConvierteaDto(usuarioEncontrado);
+
 }
+}
+
 

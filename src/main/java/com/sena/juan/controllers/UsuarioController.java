@@ -10,13 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sena.juan.dtos.UsuarioDto;
-import com.sena.juan.models.usuarios.Usuario;
 import com.sena.juan.services.UsuarioServices;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 
@@ -58,8 +61,25 @@ public class UsuarioController {
         UsuarioDto encontrado = usuarioServices.buscarPorId(Dto.getId());
         return ResponseEntity.ok(encontrado);
     }
-    
-    
+
+    //Actualizar usuario
+    @PutMapping("/{id}")
+    public ResponseEntity<UsuarioDto> actualizar(@PathVariable Long id, @RequestBody UsuarioDto usuarioDto) {
+        UsuarioDto usuarioActualizado = usuarioServices.actualizar(id, usuarioDto);
+        return ResponseEntity.ok(usuarioActualizado);
+    }
+    //Actualizar usuario por post
+    @PostMapping("/actualizar")
+    public ResponseEntity <UsuarioDto> actualizarPost(@RequestBody UsuarioDto usuarioDto) {
+        UsuarioDto usuarioActualizado = usuarioServices.actualizar(usuarioDto.getId(), usuarioDto);
+        return ResponseEntity.ok(usuarioActualizado);
+    }
+    //eliminar usuario por id
+    @DeleteMapping("/eliminar/{id}")
+    public ResponseEntity<UsuarioDto> eliminar(@PathVariable Long id) {
+        UsuarioDto usuarioEliminado = usuarioServices.eliminar(id);
+        return ResponseEntity.ok(usuarioEliminado);
+    }
 
 
 }
