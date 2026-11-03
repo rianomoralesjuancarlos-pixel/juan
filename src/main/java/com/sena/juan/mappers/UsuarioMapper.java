@@ -21,5 +21,5 @@ public interface UsuarioMapper {
     @Mapping (source = "apell" , target = "ape")
     @Mapping (source = "direc" , target = "dir")
     @Mapping (source = "tele" , target = "tel")
-    Usuario convierteaEntidad(UsuarioDto usuarioDto);
+    Usuario ConvierteaEntidad(UsuarioDto usuarioDto);
 }

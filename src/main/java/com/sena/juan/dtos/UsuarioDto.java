@@ -35,7 +35,7 @@ public class UsuarioDto {
 
     private String direc;
 
-    @Pattern (regexp = "^[0-9]+$", message = "el campo debe de tener un solo numero")
+    @Pattern (regexp = "^[0-9\\+]+$", message = "el campo debe de tener un solo numero")
     private String tele;
 
 
