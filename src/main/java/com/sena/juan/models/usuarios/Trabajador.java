@@ -21,4 +21,7 @@ public class Trabajador extends Usuario {
 
     private Double sueldo;
 
+
+
+
 }

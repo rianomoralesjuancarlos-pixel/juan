@@ -10,9 +10,10 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class TrabajadorDto {
+public class TrabajadorDto extends UsuarioDto {
 
     private String cargo;
     private Double salario;
 
-}
+    }
+

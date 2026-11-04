@@ -80,6 +80,11 @@ public class UsuarioController {
         UsuarioDto usuarioEliminado = usuarioServices.eliminar(id);
         return ResponseEntity.ok(usuarioEliminado);
     }
+    //eliminar usuario por delete
+    @DeleteMapping("/eliminar")
+    public ResponseEntity<UsuarioDto> eliminarPorDelete(@RequestBody UsuarioDto usuarioDto) {
+        UsuarioDto usuarioEliminado = usuarioServices.eliminar(usuarioDto.getId());
+        return ResponseEntity.ok(usuarioEliminado); 
 
-
+    }
 }

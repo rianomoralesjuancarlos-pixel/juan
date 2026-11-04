@@ -14,4 +14,10 @@ public interface ClienteServices {
     //consultar cliente por id
     ClienteDto buscarPorId(Long id);
 
+    //actualizar cliente
+    ClienteDto actualizar(Long id, ClienteDto clienteDto);
+
+    //eliminar cliente
+    ClienteDto eliminar(Long id);
+
 }
